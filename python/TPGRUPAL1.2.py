@@ -10,13 +10,19 @@ destino = 98765
 
 
 def tipomoneda():
-    moneda = int(input("1.PESOS 2.SOLES: "))
-    if moneda == 1:
-        moneda = saldo
-    else:
-        moneda = saldosol
-
-    return moneda
+    connt = 1
+    while connt > 0:
+        moneda = int(input("1.PESOS 2.SOLES: "))
+        if moneda == 1:
+            moneda = saldo
+            connt = connt - 1
+        elif moneda == 2:
+            moneda = saldosol
+            connt = connt - 1    
+        else:
+            print("""ERROR: Vuelve a intentar""")
+            moneda = int(input("1.PESOS 2.SOLES: "))           
+    return moneda             
 def consultas():
     op = int(input("""OPCIONES
                       1.Posición Global
